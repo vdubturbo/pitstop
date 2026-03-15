@@ -3,9 +3,10 @@ export interface Location {
   coordinates: [number, number]; // [lng, lat]
 }
 
-export interface RouteState {
-  origin: Location | null;
-  destination: Location | null;
-  routeGeometry: GeoJSON.LineString | null;
-  isRouteActive: boolean;
+export interface BathroomResult {
+  name: string;
+  brand: string;
+  coordinates: [number, number]; // [lng, lat]
+  detourMinutes: number;
+  milesAhead: number;
 }
