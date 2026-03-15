@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import SplashScreen from "@/components/SplashScreen";
 import MapView from "@/components/MapView";
 import NeedToGoButton from "@/components/NeedToGoButton";
 import RouteInput from "@/components/RouteInput";
@@ -17,6 +18,8 @@ import {
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function Home() {
+  const [showSplash, setShowSplash] = useState(true);
+
   const [origin, setOrigin] = useState<Location | null>(null);
   const [destination, setDestination] = useState<Location | null>(null);
   const [routeGeometry, setRouteGeometry] = useState<GeoJSON.LineString | null>(null);
@@ -158,6 +161,8 @@ export default function Home() {
 
   return (
     <div className="relative h-full w-full overflow-hidden">
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+
       <MapView
         origin={origin}
         destination={destination}

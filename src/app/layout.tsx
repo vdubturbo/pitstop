@@ -10,6 +10,17 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Pitstop",
   description: "Find clean bathrooms on your road trip",
+  openGraph: {
+    title: "Pitstop",
+    description: "Find clean bathrooms on your road trip",
+    images: [{ url: "/pitstop.png", width: 512, height: 512, alt: "Pitstop logo" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Pitstop",
+    description: "Find clean bathrooms on your road trip",
+    images: ["/pitstop.png"],
+  },
 };
 
 export const viewport: Viewport = {
