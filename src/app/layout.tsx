@@ -8,6 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pitstop.up.railway.app"),
   title: "Pitstop",
   description: "Find clean bathrooms on your road trip",
   openGraph: {
